@@ -12,7 +12,7 @@ RUN apk add --update nodejs npm dumb-init
 
 ADD https://github.com/karlenek/home-assistant-watcher/archive/v0.1.1.zip /
 
-RUN unzip /master.zip -d /opt
+RUN unzip /v0.1.1.zip -d /opt
 
 RUN mv /opt/home-assistant-watcher-v0.1.1/* /opt/.
 
