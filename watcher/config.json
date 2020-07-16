@@ -14,7 +14,8 @@
       "8040/tcp": "Watcher Server"
   },
   "environment": {
-    "CONFIG_PATH": "../data/options.json"
+    "CONFIG_PATH": "../data/options.json",
+    "SERVER_PORT": "8040"
   },
   "options": {
     "server": {
