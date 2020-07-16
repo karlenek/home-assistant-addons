@@ -7,6 +7,12 @@
   "url": "https://github.com/karlenek/home-assistant-watcher-addon",
   "startup": "once",
   "boot": "auto",
+  "ports": {
+    "8040/tcp": 8040
+  },
+  "ports_description": {
+      "8040/tcp": "Watcher Server"
+  },
   "environment": {
     "CONFIG_PATH": "../data/options.json"
   },
@@ -15,7 +21,7 @@
       "token": "1234"
     },
     "client": {
-      "host": "localhost:8080",
+      "host": "localhost:8040",
       "token": "1234"
     },
     "mqtt": {
