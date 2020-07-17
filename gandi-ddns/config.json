@@ -1,0 +1,57 @@
+{
+  "name": "Gandi DDNS",
+  "version": "0.1.1",
+  "stage": "experimental",
+  "slug": "gandi-ddns-addon",
+  "description": "Add-on that watches your public ip and updates DNS record with Gandi Live DNS API",
+  "url": "https://github.com/karlenek/home-assistant-addons",
+  "startup": "once",
+  "boot": "auto",
+  "environment": {
+    "CONFIG_PATH": "../data/options.json"
+  },
+  "options": {
+    "logging": {
+      "level": "debug"
+    },
+    "gandi": {
+      "apiKey": "GANID-API-KEY"
+    },
+    "zones": [
+      {
+        "domain": "example.se",
+        "source": "public",
+        "ttl": 300
+      }
+    ],
+    "public": {},
+    "sonicwall": {}
+  },
+  "schema": {
+    "logging": {
+      "level": "str?"
+    },
+    "interval": "str?",
+    "gandi": {
+      "apiKey": "str",
+      "cacheTime": "int?"
+    },
+    "zones": [
+      {
+        "domain": "str",
+        "source": "str",
+        "ttl": "int",
+        "interface": "str?"
+      }
+    ],
+    "public": {
+      "host": "url?"
+    },
+    "sonicwall": {
+      "host": "str?",
+      "username": "str?",
+      "password": "str?"
+    }
+  },
+  "arch": ["amd64", "armv7", "armhf", "i386" , "aarch64"]
+}

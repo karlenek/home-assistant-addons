@@ -1,0 +1,9 @@
+{
+  "build_from": {
+      "amd64": "hassioaddons/base",
+      "armv7": "hassioaddons/base"
+  },
+  "args": {
+      "GANID_DDNS_VERSION": "0.1.1"
+  }
+}

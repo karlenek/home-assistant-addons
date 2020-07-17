@@ -4,7 +4,7 @@
   "stage": "experimental",
   "slug": "home-assistant-watcher-addon",
   "description": "Add-on that watches the state of an event bus",
-  "url": "https://github.com/karlenek/home-assistant-watcher-addon",
+  "url": "https://github.com/karlenek/home-assistant-addons",
   "startup": "once",
   "boot": "auto",
   "ports": {
