@@ -19,32 +19,44 @@
   },
   "options": {
     "server": {
+      "enabled": true,
       "token": "1234"
     },
     "client": {
+      "enabled": true,
       "host": "localhost:8040",
-      "token": "1234"
+      "token": "1234",
+      "retryTime": 10,
+      "tls": false
     },
     "mqtt": {
       "host": "192.168.1.2",
       "port": 1883,
       "username": "mqtt",
-      "password": "secret"
+      "password": "<secret>",
+      "discoveryPrefix": "hass",
+      "hassStatusTopic": "hass/status"
     }
   },
   "schema": {
     "server": {
+      "enabled": "bool",
       "token": "str"
     },
     "client": {
+      "enabled": "bool",
       "host": "str",
-      "token": "str"
+      "token": "str",
+      "retryTime": "int",
+      "tls": "bool"
     },
     "mqtt": {
       "host": "str",
       "port": "int",
       "username": "str",
-      "password": "str"
+      "password": "str",
+      "discoveryPrefix": "str",
+      "hassStatusTopic": "str"
     }
   },
   "arch": ["amd64", "armv7", "armhf", "i386" , "aarch64"]
