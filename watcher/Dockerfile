@@ -1,7 +1,7 @@
 ARG BUILD_FROM=homeassistant/amd64-base:latest
 FROM $BUILD_FROM
 
-# TODO: add version as argument
+ARG WATCHER_VERSION
 
 ENV LANG C.UTF-8
 
@@ -10,11 +10,9 @@ WORKDIR /opt
 RUN apk add --no-cache unzip
 RUN apk add --update nodejs npm dumb-init
 
-ADD https://github.com/karlenek/home-assistant-watcher/archive/v0.1.1.zip /
-
-RUN unzip /v0.1.1.zip -d /opt
-
-RUN mv /opt/home-assistant-watcher-v0.1.1/* /opt/.
+RUN wget --quiet -O /tmp/repo.zip "https://github.com/karlenek/home-assistant-watcher/archive/v${WATCHER_VERSION}.zip" && \
+    unzip /tmp/repo.zip -d /opt && \
+    mv /opt/home-assistant-watcher-${WATCHER_VERSION}/* /opt/.
 
 RUN npm install
 

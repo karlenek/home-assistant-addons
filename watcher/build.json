@@ -1,0 +1,9 @@
+{
+  "build_from": {
+      "amd64": "hassioaddons/base",
+      "armv7": "hassioaddons/base"
+  },
+  "args": {
+      "WATCHER_VERSION": "0.1.2"
+  }
+}
