@@ -1,0 +1,76 @@
+{
+  "name": "System Monitor",
+  "version": "0.1.0",
+  "stage": "experimental",
+  "slug": "sys-monitor",
+  "description": "Add-on that watches the state of the system",
+  "url": "https://github.com/karlenek/home-assistant-addons",
+  "startup": "system",
+  "boot": "auto",
+  "docker_api": true,
+  "homeassistant_api": true,
+  "environment": {
+    "SYSM_CONFIG_PATH": "../data/options.json"
+  },
+  "options": {
+    "sysmServer": {
+      "host": "sysm-server",
+      "tls": false,
+      "appId": "",
+      "token": ""
+    },
+    "mqtt": {
+      "enabled": false,
+      "host": "addon_core_mosquitto",
+      "port": 1883,
+      "auth": false,
+      "username": "",
+      "password": ""
+    },
+    "hass": {
+      "enabled": true,
+      "host": "supervisor",
+      "token": "",
+      "tls": false
+    },
+    "docker": {
+      "enabled": false,
+      "socket": "/var/run/docker.sock",
+      "token": "",
+      "containers": [
+        "homeassistant",
+        "hassio_dns",
+        "hassio_supervisor"
+      ]
+    }
+  },
+  "schema": {
+    "sysmServer": {
+      "host": "str",
+      "tls": "bool",
+      "appId": "str",
+      "token": "str"
+    },
+    "mqtt": {
+      "enabled": "bool",
+      "host": "str",
+      "port": "port",
+      "auth": "bool",
+      "username": "str",
+      "password": "str"
+    },
+    "hass": {
+      "enabled": "bool",
+      "host": "str",
+      "token": "str",
+      "tls": "bool"
+    },
+    "docker": {
+      "enabled": "bool",
+      "socket": "str",
+      "token": "str",
+      "containers": ["str"]
+    }
+  },
+  "arch": ["amd64", "armv7", "armhf", "i386" , "aarch64"]
+}
