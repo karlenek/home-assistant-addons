@@ -1,6 +1,6 @@
 {
   "name": "System Monitor",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "stage": "experimental",
   "slug": "sys-monitor",
   "description": "Add-on that watches the state of the system",
@@ -17,7 +17,8 @@
       "host": "sysm-server",
       "tls": false,
       "appId": "",
-      "token": ""
+      "token": "",
+      "updateInterval": 2000
     },
     "mqtt": {
       "enabled": false,
@@ -49,7 +50,8 @@
       "host": "str",
       "tls": "bool",
       "appId": "str",
-      "token": "str"
+      "token": "str",
+      "updateInterval": "int"
     },
     "mqtt": {
       "enabled": "bool",

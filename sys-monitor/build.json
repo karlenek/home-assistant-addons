@@ -4,6 +4,6 @@
       "armv7": "hassioaddons/base"
   },
   "args": {
-      "SYSM_VERSION": "0.1.0"
+      "SYSM_VERSION": "0.2.1"
   }
 }
